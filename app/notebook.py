@@ -22,4 +22,15 @@ class Note:
             self.tags.append(tag)
 
     def __str__(self)-> str:
-        return f"Date: {self.creation_date.datetime.now()}\n {self.title}: {self.text}"
+        return f"Date: {self.creation_date}\n {self.title}: {self.text}"
+
+class Notebook:
+    def __init__(self):
+        self.notes: list[Note] = []
+
+    def add_note(self, title: str, text: str, importance: str)-> int:
+
+
+        note = Note(title, title, text, importance)
+
+
