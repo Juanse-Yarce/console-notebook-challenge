@@ -1,7 +1,4 @@
-# TODO: Agrega el código de las clases del modelo aquí. Borra este comentario al terminar.
 from datetime import datetime
-
-
 
 class Note:
     HIGH: str = "HIGH"
@@ -29,12 +26,18 @@ class Notebook:
         self.notes: list[Note] = []
 
     def add_note(self, title: str, text: str, importance: str)-> int:
-        note_code: int = len(self.notes)+1
-        note = Note(note_code:str(note_code), title, text, importance)
+        note_code: int = len(self.notes) + 1
+
+        for note in self.notes:
+            if note.code == str(note_code):
+                note_code += 1
+
+        note = Note(str(note_code), title, text, importance)
         self.notes.append(note)
         return note_code
 
     def delete_note(self, note_code: int)-> int:
+
 
 
 
