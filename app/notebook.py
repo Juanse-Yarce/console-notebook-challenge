@@ -42,3 +42,12 @@ class Notebook:
                 self.notes.remove(note)
                 break
 
+
+def important_notes(selfself) -> list[Note]:
+    resulting_notes: list[Note] = []
+    for note in self.notes:
+        if note.importance == Note.HIGH or Note.MEDIUM:
+            resulting_notes.append(note)
+    return resulting_notes
+
+
