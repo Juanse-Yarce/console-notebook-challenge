@@ -49,5 +49,12 @@ class Notebook:
                 resulting_notes.append(note)
         return resulting_notes
 
+    def notes_by_tag(self, tag: str) -> list[Note]:
+        resulting_notes: list[Note] = []
+        for note in self.notes:
+            if tag in note.tags:
+                resulting_notes.append(note)
+        return resulting_notes
+
 
 
