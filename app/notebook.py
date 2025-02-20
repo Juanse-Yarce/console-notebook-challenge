@@ -36,8 +36,9 @@ class Notebook:
         self.notes.append(note)
         return note_code
 
-    def delete_note(self, note_code: int)-> int:
-
-
-
+    def delete_note(self, note_code: int):
+        for note in self.notes:
+            if note.code == str(note_code):
+                self.notes.remove(note)
+                break
 
